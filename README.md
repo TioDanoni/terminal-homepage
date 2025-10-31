@@ -2,6 +2,8 @@
 
 Uma página inicial moderna e personalizável com interface de terminal, modo de edição intuitivo e relógio em tempo real.
 
+<img width="1856" height="512" alt="image" src="https://github.com/user-attachments/assets/af803325-2411-4ece-abbf-7ac691ef6264" />
+
 ## 📁 Arquivos
 - `index.html` — página principal
 - `styles.css` — estilos com gradientes, glow e design responsivo
@@ -24,6 +26,9 @@ Uma página inicial moderna e personalizável com interface de terminal, modo de
 
 ### ✏️ Modo Edição (Botão no Canto Superior Direito)
 Clique no ícone ✏️ para habilitar o modo de edição:
+
+<img width="1856" height="512" alt="image" src="https://github.com/user-attachments/assets/8717846a-ebd5-4961-b500-61fad3625408" />
+
 
 **Editar Categorias (Colunas):**
 - Clique no título para editar inline
@@ -60,6 +65,8 @@ No modo edição, clique em "Gerenciar" para:
 - Remover buscadores
 - URLs devem conter `{query}` onde a busca aparecerá
 
+<img width="1856" height="512" alt="image" src="https://github.com/user-attachments/assets/6685ff76-50a5-4d31-8aad-554ce23760bc" />
+
 **Exemplo de URL:**
 ```
 https://www.google.com/search?q={query}
@@ -73,6 +80,9 @@ https://www.google.com/search?q={query}
 ## 🎨 Personalização
 
 ### Tema e Cores
+
+<img width="1856" height="512" alt="image" src="https://github.com/user-attachments/assets/cede0772-145c-413e-b6e9-7b64e1caf728" />
+
 As cores podem ser ajustadas no arquivo `styles.css`:
 ```css
 :root {
