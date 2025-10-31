@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Página Inicial — Terminal</title>
+  <link href="styles.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="bg"></div>
+  
+  <!-- Botões de controle -->
+  <button id="editModeBtn" class="edit-mode-toggle" title="Modo Edição">✏️</button>
+  <button id="customizeBtn" class="customize-toggle" title="Personalizar Aparência">🎨</button>
+  
+  <main class="shell">
+    <header class="shell-header">
+      <div class="dots">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+      </div>
+      <div class="header-center">
+        <div id="clock" class="clock">
+          <div class="time">00:00</div>
+          <div class="date">Carregando...</div>
+        </div>
+        <h1 class="title">Bem vindo</h1>
+      </div>
+    </header>
+
+    <section class="grid" id="tilesGrid" aria-live="polite">
+      <!-- Tiles serão renderizados dinamicamente a partir do config (localStorage ou default) -->
+    </section>
+
+    <footer class="prompt">
+      <div class="prompt-line">
+        <span class="user">excalitha@firefox</span>
+        <span class="chev">&nbsp;&gt;</span>
+        <form id="searchForm">
+          <label for="cmd" class="visually-hidden">Comando</label>
+          <input id="cmd" name="cmd" autocomplete="off" spellcheck="false" autofocus />
+        </form>
+        <span class="caret" aria-hidden></span>
+      </div>
+      <div class="hint">Dica: digite uma pesquisa e pressione Enter. Prefixe com <code>g </code> para pesquisar no Google, ou clique nos links acima.</div>
+      <div id="searchEnginesHint" class="search-engines-hint"></div>
+    </footer>
+  </main>
+
+  <!-- Painel de Customização -->
+  <div id="customizePanel" class="customize-panel">
+    <div class="customize-header">
+      <h3>> CUSTOMIZAÇÃO</h3>
+      <button id="closeCustomize" class="close-btn">✕</button>
+    </div>
+    <div class="customize-content">
+      <div class="customize-section">
+        <label>Título Principal</label>
+        <input type="text" id="customTitle" placeholder="Bem vindo">
+      </div>
+      
+      <div class="customize-section">
+        <label>Altura do Terminal (px)</label>
+        <input type="range" id="shellHeight" min="400" max="900" value="auto" step="50">
+        <span id="heightValue">Auto</span>
+      </div>
+      
+      <div class="customize-section">
+        <label>Largura Máxima (px)</label>
+        <input type="range" id="shellWidth" min="800" max="1600" value="1200" step="100">
+        <span id="widthValue">1200px</span>
+      </div>
+      
+      <div class="customize-section">
+        <label>Tema de Cores</label>
+        <div class="theme-buttons">
+          <button class="theme-btn active" data-theme="default">
+            <span style="background: linear-gradient(135deg, #6ee7b7, #7c5cff)"></span>
+            Matrix
+          </button>
+          <button class="theme-btn" data-theme="ocean">
+            <span style="background: linear-gradient(135deg, #00d4ff, #0099ff)"></span>
+            Ocean
+          </button>
+          <button class="theme-btn" data-theme="fire">
+            <span style="background: linear-gradient(135deg, #ff6b6b, #ffd93d)"></span>
+            Fire
+          </button>
+          <button class="theme-btn" data-theme="cyberpunk">
+            <span style="background: linear-gradient(135deg, #ff00ff, #00ffff)"></span>
+            Cyberpunk
+          </button>
+          <button class="theme-btn" data-theme="dracula">
+            <span style="background: linear-gradient(135deg, #bd93f9, #ff79c6)"></span>
+            Dracula
+          </button>
+        </div>
+      </div>
+      
+      <div class="customize-section">
+        <label>Cores Personalizadas</label>
+        <div class="color-inputs">
+          <div>
+            <label>Accent 1</label>
+            <input type="color" id="customAccent1" value="#6ee7b7">
+          </div>
+          <div>
+            <label>Accent 2</label>
+            <input type="color" id="customAccent2" value="#7c5cff">
+          </div>
+        </div>
+      </div>
+      
+      <div class="customize-section">
+        <label>Efeitos CRT</label>
+        <div class="toggle-switch">
+          <input type="checkbox" id="crtEffect" checked>
+          <label for="crtEffect">Scanlines</label>
+        </div>
+      </div>
+      
+      <button id="resetCustomize" class="reset-btn">Restaurar Padrão</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
